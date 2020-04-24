@@ -50,8 +50,7 @@ def update(blog_post_id):
         db.session.commit()
         flash('Post Updated')
         return redirect(url_for('blog_posts.blog_post', blog_post_id=blog_post.id))
-    # Pass back the old blog post information so they can start again with
-    # the old text and title.
+    
     elif request.method == 'GET':
         form.title.data = blog_post.title
         form.text.data = blog_post.text
