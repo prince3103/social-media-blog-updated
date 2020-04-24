@@ -5,10 +5,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 
-from puppycompanyblog.core.views import core
-from puppycompanyblog.users.views import users
-from puppycompanyblog.blog_posts.views import blog_posts
-from puppycompanyblog.error_pages.handlers import error_pages
+
 
 app = Flask(__name__)
 
@@ -47,7 +44,10 @@ login_manager.login_view = "users.login"
 ###########################
 #### BLUEPRINT CONFIGS #######
 #########################
-
+from puppycompanyblog.core.views import core
+from puppycompanyblog.users.views import users
+from puppycompanyblog.blog_posts.views import blog_posts
+from puppycompanyblog.error_pages.handlers import error_pages
 
 # Register the apps
 app.register_blueprint(users)
